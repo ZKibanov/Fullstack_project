@@ -1,7 +1,7 @@
 const { credentialsDb, usersDb, sessionDb } = require('./db.service')
 
 class SessionService {
-    checkCredentials = ({ userId, username, password }) => {
+    tryLogin = ({ userId, username, password }) => {
         if (userId) {
             //TODO: если юзер есть, а пароля нет - обязать сделать пароль
             if (credentialsDb.getCredentials(userId)?.password === password) {
@@ -13,6 +13,10 @@ class SessionService {
                 return sessionDb.saveSession(userId)
             }
         }
+    }
+
+    tryLogout = (sessionId) => {
+        return sessionDb.deleteSession(sessionId)
     }
 }
 

@@ -2,14 +2,14 @@ const express = require('express');
 var bodyParser = require('body-parser');
 const {sessionDb} = require('./services/db.service');
 const usersController = require('./controllers/users.controller')
-const loginController = require('./controllers/login.controller')
+const authController = require('./controllers/auth.controller')
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use('/users', usersController)
-app.use('/login', loginController)
+app.use('/auth', authController)
 
 app.get('/', (req, res) => {
     const sessionId = req.headers.cookie.split('=')[1];
