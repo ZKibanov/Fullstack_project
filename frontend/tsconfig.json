@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+     // мы собираем вебпаком, но на всякий)
+      "outDir": "./dist/",
+      // отмечает все места, где может быть any
+      "noImplicitAny": true,
+      "module": "ESNext",
+      // во что компилируется результат:
+      "target": "es5",
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "moduleResolution": "node",
+      // Для абсолютного имопорта
+      "baseUrl": ".",
+      // позволяет работать с пакетами common js как с обычными модулями
+      "esModuleInterop": true,
+      // разрешает не использовать * as, даже если нет дефолтного импорта
+      "allowSyntheticDefaultImports": true
+    },
+    // поддержка import на компиляции
+    "ts-node":{
+        "compilerOptions":{
+            "module": "CommonJS"
+        }
+      },
+  }
