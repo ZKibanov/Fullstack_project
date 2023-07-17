@@ -18,9 +18,9 @@ jobs:
           with:
             node-version: ${{ matrix.node-version }}
         - name: install backend modules
-          run: npm --prefix ./backend run install
+          run: npm --prefix ./backend install
         - name: install frontend modules
-          run: npm --prefix ./frontend run install
+          run: npm --prefix ./frontend install
         - name: run backend tests
           run: npm --prefix ./backend run test
               # - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
